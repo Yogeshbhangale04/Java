@@ -1,3 +1,5 @@
+output.jsp
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -7,37 +9,32 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<h1>Welcome to JSP</h1>
-<form action="output.jsp">
-    <label>Enter number</label>
-    <input type="text" name="number">
-    <button type="submit">Submit</button>
-</form>
-
-<%!
-public int cube(int n){
-	return n*n*n;
-}
-%>
 <%
-// Retrieve the input number from the request parameter "number"
 String n = request.getParameter("number");
-
-if (n != null && !n.isEmpty()){
-    try {
-        // Convert the input string to an integer
-        int no = Integer.parseInt(n);
-        // Print the input number to the HTML page
-        out.println("Number Entered is : " + no);
-        out.println("<br> <br>");
-        // Calculate the cube of the input number and print it to the HTML page
-        out.println("Cube of Number : " + cube(no));
-    } catch (NumberFormatException e) {
-        out.println("Invalid input! Please enter a valid number.");
-    }
-}
+int no = Integer.parseInt(n);//string to integer
+out.println("Number entered is"+no);
+out.println("cube of number is "+ no*no*no);
 %>
+</body>
+</html>
 
+
+
+input.html
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="output.jsp">
+
+<label>Enter the number</label>
+<input type="number" name="number">
+<button type="submit">submit</button>
+
+</form>
 </body>
 </html>

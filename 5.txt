@@ -1,3 +1,9 @@
+// create two Project RMIServer and  RMIClient
+//In RMIServer create 3 file checkPalindrome, checkPalindromeImpl and RMIServer
+//In RMIClient create file RMIClient
+
+//create interface checkPalindrome
+
 package RMI5;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -7,6 +13,9 @@ public interface checkPalindrome extends Remote{
 
 }
 ************
+
+// create class checkPalindromeImpl
+
 package RMI5;
 
 import java.rmi.RemoteException;
@@ -41,7 +50,13 @@ public class checkPalindromeImpl extends UnicastRemoteObject implements checkPal
         return true; // String is a palindrome
     }
 }
+
+
+
 *********
+
+//create class RMIServer
+
 package RMI5;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
@@ -80,6 +95,11 @@ public class RMIServer extends UnicastRemoteObject implements checkPalindrome{
 
 
 **********
+
+
+//create class RMIClient
+
+
 package RMI5;
 import java.util.*;
 import java.rmi.Remote;
